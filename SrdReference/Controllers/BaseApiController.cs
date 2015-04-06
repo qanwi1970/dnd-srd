@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Web.Http;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -23,6 +19,13 @@ namespace SrdReference.Controllers
             {
                 return _AppUserManager ?? Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
+        }
+
+        private ApplicationRoleManager _applicationRoleManager = null;
+
+        protected ApplicationRoleManager AppRoleManager
+        {
+            get { return _applicationRoleManager ?? Request.GetOwinContext().GetUserManager<ApplicationRoleManager>(); }
         }
 
         public BaseApiController()

@@ -1,12 +1,11 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DungeonMart.Data.Models
+namespace SrdReference.Models.Entities
 {
+    [Table("Alignment")]
     public class Alignment
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
 
